@@ -1,3 +1,10 @@
+/*
+ * @Author: Hailiang Feng 
+ * @Date: 2018-12-28 15:35:40 
+ * @Last Modified by:   Hailiang Feng 
+ * @Last Modified time: 2018-12-28 15:35:40 
+ */
+
 #include "RObject.hpp"
 #include <iostream>
 #include <RegCoreGlobal.hpp>
