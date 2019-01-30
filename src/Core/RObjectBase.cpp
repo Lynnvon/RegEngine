@@ -7,15 +7,20 @@
 
 #include "RObjectBase.hpp"
 #include <iostream>
-namespace Reg{
+namespace Reg{   
 
-    RObjectBase::RObjectBase() {
-    }
+
 
     RObjectBase::~RObjectBase() {
 
     }
     void RObjectBase::Begin(){
         std::cout<<"this is objectBase Begin"<<std::endl;
+    }
+    void RObjectBase::Tick(){
+        std::cout<<"this is objectBase Tick"<<std::endl;
+    }
+    void RObjectBase::Destory(){
+        std::cout<<"this is objectBase Destroy"<<std::endl;
     }
 }

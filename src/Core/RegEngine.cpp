@@ -14,16 +14,16 @@
 using namespace std;
 namespace Reg
 {
-float tickRate;
+
 RegEngine::RegEngine()
 {
     bRun = true;
     REngine = this;
-    tickRate = 1;
 }
 
 RegEngine::~RegEngine()
 {
+    std::cout<<"Game Done"<<std::endl;
 }
 
 void RegEngine::Register(RObject *rObject)
@@ -31,29 +31,23 @@ void RegEngine::Register(RObject *rObject)
     
     Objs.push_back(rObject);
 }
-void RegEngine::UnRegister(RObject *rObject)
-{   
-    std::cout<<rObject->objName<<std::endl;
-    
-
-    //delete rObject;
-  
+void RegEngine::UnRegister(RObject* rObject)
+{ 
+    std::vector<RObject*> newObjs;
+    for(auto item : Objs)
+    {
+        if (rObject->getName() == item->getName()) {
+            continue;
+        }
+        newObjs.push_back(item);
+    }
+     
+    Objs = newObjs;  
 }
 
 void RegEngine::Run()
-{
-    struct Inner{
-        Inner(){
-            std::cout<<"this is jubu lei constructor"<<std::endl;
-
-        }
-        ~Inner(){
-            std::cout<<"this is jubu lei "<<std::endl;
-        }
-    }InderGuard;
-   
+{   
     Begin();
-    Tick(tickRate);
 }
 
 void RegEngine::Begin()
@@ -62,6 +56,7 @@ void RegEngine::Begin()
     {
         item->Begin();
     }
+    Tick(1.0f);
 }
 //update
 void RegEngine::Tick(float time)
@@ -79,10 +74,13 @@ void RegEngine::Tick(float time)
 }
 void RegEngine::Destory()
 {
-    for (auto item : Objs)
-    {
+  
+    while(!Objs.empty()){
+        RObject* item = Objs.front();
         item->Destory();
+        UnRegister(item);
     }
+    
 }
 
 } // namespace Reg

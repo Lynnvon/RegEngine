@@ -10,30 +10,26 @@
 #include "RegCoreGlobal.hpp"
 namespace Reg
 {
-    RObject::RObject(char* name) {
-
+    RObject::RObject(char* name):RObjectBase(name){
         REngine->Register(this);
-        objName = name;
-        std::cout<<objName<<" constructor"<<std::endl;
+        std::cout<<Name<<"---Register"<<std::endl;
 
     }
 
     RObject::~RObject() {
-        std::cout<<objName<<"Desstructor"<<std::endl;
-
+        std::cout<<Name<<"Destructor"<<std::endl;
     }
 
     void RObject::Begin(){
-        std::cout<<objName<<"Begin"<<std::endl;
+        std::cout<<Name<<"Begin"<<std::endl;
     }
    
     void RObject::Tick(){
-        std::cout<<objName<<"Tick"<<std::endl;
+        std::cout<<Name<<"Tick"<<std::endl;
 
     }
     void RObject::Destory(){
-
-        REngine->UnRegister(this);
+        std::cout<<Name<<"Destroy"<<std::endl;
 
     }
 }

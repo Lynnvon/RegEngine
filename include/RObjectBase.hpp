@@ -6,19 +6,29 @@
  */
 
 #pragma once
-
+#include "RVector2.hpp"
 namespace Reg
 {
-    class RObjectBase {
 
-        public:
-            RObjectBase();
-            ~RObjectBase();
-        
-            virtual void Begin()=0;
-            virtual void Tick()=0;
-            virtual void Destory()=0;
-            
+    class RObjectBase
+    {
+
+      public:
+        RObjectBase()=default;
+        RObjectBase(char* name):Name(name){
+
+        };
+        virtual ~RObjectBase();
+        virtual void Begin() = 0;
+        virtual void Tick() = 0;
+        virtual void Destory() = 0;
+        inline char* getName(){return Name;}
+        inline RVector2 getPosition(){return position;}
+      protected:
+        char* Name;
+        RVector2 position;
+
+
     };
-        
-}
+
+} // namespace Reg

@@ -6,32 +6,22 @@
  */
 
 #include <iostream>
-
-#include "RegStatic.hpp"
-#include "RObject.hpp"
-#include "RObjectBase.hpp"
 #include <memory>
-#include "RegEngine.hpp"
-
+#include "Demo.hpp"
 using namespace Reg;
 
-int main() {
-
+int main()
+{
+ 
+    Demo* app=new Demo();
+    app->Run();
     
-    RegEngine* reg = new RegEngine();
-   
-    RObject* r1=new RObject("r1");
-    RObject* r2=new RObject("r2");   
-    char* aa = "r3";
-    auto ptr1 = std::make_shared<RObject>(aa);
-    //std::cout<<ptr1.use_count()<<std::endl;
-
-    reg->Run();
     
-    //std::cout<<ptr1.use_count()<<std::endl;
-
-
-  
+    
+    if (app!=nullptr) {
+       delete app;
+    }
+    
     getchar();
 
     return 0;

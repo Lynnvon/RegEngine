@@ -17,4 +17,5 @@ class RegCoreGlobal
     extern bool bRun;
     extern int FPS;
     extern RegEngine* REngine;
+    extern float tickRate;
 } // namespace Reg

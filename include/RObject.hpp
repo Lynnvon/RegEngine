@@ -10,19 +10,23 @@
 
 namespace Reg
 {
-class RObject : public RObjectBase
-{
-
-  public:
-    RObject(char* name);
-    ~RObject();
-    bool operator==(const RObject& r)
+    class RObject : public RObjectBase
     {
-        return objName == r.objName;
-    }   
- void Begin();
-    void Tick();
-    void Destory();
-    char *objName;
-};
+
+    public:
+        RObject()=default;
+        RObject(char* name);
+    
+        ~RObject() override;
+
+        bool operator==(const RObject& oth)
+        {
+            return Name == oth.Name;
+        }   
+
+        void Begin() override;
+        void Tick() override;
+        void Destory() override;
+       
+    };
 } // namespace Reg

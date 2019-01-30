@@ -12,6 +12,6 @@ namespace Reg
     bool bRun = false;
     int FPS = 60;
     RegEngine* REngine = nullptr;
-
+    float tickRate = 1;
     
 }

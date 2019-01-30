@@ -25,4 +25,6 @@ namespace Reg
 
 
     };
+
+    enum R_ZERO{ZERO};
 }
