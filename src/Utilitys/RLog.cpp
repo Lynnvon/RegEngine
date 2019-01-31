@@ -2,7 +2,7 @@
  * @Author: Hailiang Feng 
  * @Date: 2019-01-31 15:39:05 
  * @Last Modified by: Hailiang Feng
- * @Last Modified time: 2019-01-31 15:41:16
+ * @Last Modified time: 2019-01-31 16:09:46
  */
 
 #include "RLog.hpp"
@@ -19,6 +19,9 @@ namespace  Reg{
     }
 
     void RLog::Log(std::string content){
+        std::cout<<content<<std::endl;
+    }
+    void RLog::Log(int content){
         std::cout<<content<<std::endl;
     }
 }

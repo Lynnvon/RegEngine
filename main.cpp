@@ -2,7 +2,7 @@
  * @Author: Hailiang Feng 
  * @Date: 2018-12-28 15:37:34 
  * @Last Modified by: Hailiang Feng
- * @Last Modified time: 2019-01-02 12:31:33
+ * @Last Modified time: 2019-01-31 17:04:20
  */
 
 #include <iostream>
@@ -31,6 +31,5 @@ int main()
     } MainScopeGuard;
 
     getchar();
-
     return 0;
 }

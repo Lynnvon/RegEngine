@@ -43,7 +43,8 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "map": "cpp"
     },
     "cmake.configureOnOpen": false
 }
