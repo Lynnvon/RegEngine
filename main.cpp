@@ -6,21 +6,25 @@
  */
 
 #include <iostream>
-#include <memory>
-#include "Demo.hpp"
+#include <Demo.hpp>
 using namespace Reg;
-
 int main()
-{
- 
-    Demo* app=new Demo();
-    app->Run();
+{ 
     
-    
-    
-    if (app!=nullptr) {
-       delete app;
-    }
+    struct MainScope
+    {
+        Demo* app;
+        MainScope(){
+            app=new Demo();
+            app->Run();
+        }
+        ~MainScope(){  
+            if (app!=nullptr) {
+            delete app;
+            }
+        }
+    }MainScopeGuard;  
+  
     
     getchar();
 

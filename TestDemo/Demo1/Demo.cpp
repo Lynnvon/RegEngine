@@ -11,7 +11,9 @@ Demo::Demo()
 
 Demo::~Demo()
 {
-    delete engine;
+    if (engine!=nullptr) {
+         delete engine;
+    }    
 }
 
 void Demo::Run()

@@ -25,8 +25,7 @@ class RVector2
     
     constexpr RVector2(R_ZERO)
         : x(0.0f), y(0.0f)
-    {
-    }    
+    { }    
 
 
 
