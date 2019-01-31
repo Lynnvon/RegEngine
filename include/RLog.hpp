@@ -1,8 +1,8 @@
 /*
  * @Author: Hailiang Feng 
  * @Date: 2019-01-31 15:39:12 
- * @Last Modified by:   Hailiang Feng 
- * @Last Modified time: 2019-01-31 15:39:12 
+ * @Last Modified by: Hailiang Feng
+ * @Last Modified time: 2019-01-31 16:10:05
  */
 
 #pragma once
@@ -19,7 +19,7 @@ namespace Reg
         void operator=(RLog const&) = delete;
 
         void Log(std::string content);
-
+        void Log(int content);
     private:
         RLog();
     };

@@ -1,8 +1,8 @@
 /*
  * @Author: Hailiang Feng 
  * @Date: 2018-12-28 15:37:23 
- * @Last Modified by:   Hailiang Feng 
- * @Last Modified time: 2018-12-28 15:37:23 
+ * @Last Modified by: Hailiang Feng
+ * @Last Modified time: 2019-01-31 17:17:34
  */
 
 #include "RegEngine.hpp"
@@ -63,6 +63,8 @@ void RegEngine::Begin()
 void RegEngine::Tick(float time)
 {
     InputHandler* input=new InputHandler();
+    input->BindAction(EventType::KeyBoard, KeyCode::ESC,"ESC press");
+    input->BindAction(EventType::KeyBoard, KeyCode::ESC,"ESC press");
     while (bRun)
     {
         input->ReadInput();
