@@ -6,26 +6,30 @@
  */
 
 #include <iostream>
-#include <Demo.hpp>
+#include "RegEngine.hpp"
+#include "Demo.hpp"
 using namespace Reg;
 int main()
-{ 
-    
+{
+
     struct MainScope
     {
-        Demo* app;
-        MainScope(){
-            app=new Demo();
+        RegEngine *app;
+        MainScope()
+        {
+            app = new RegEngine();
             app->Run();
         }
-        ~MainScope(){  
-            if (app!=nullptr) {
-            delete app;
+        ~MainScope()
+        {
+            if (app != nullptr)
+            {
+                delete app;
+                app = nullptr;
             }
         }
-    }MainScopeGuard;  
-  
-    
+    } MainScopeGuard;
+
     getchar();
 
     return 0;

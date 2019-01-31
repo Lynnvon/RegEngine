@@ -1,28 +1,34 @@
 #include "Demo.hpp"
 #include "RegEngine.hpp"
 #include "RObject.hpp"
+#include "RegCoreGlobal.hpp"
 namespace Reg
 {
 
 Demo::Demo()
 {
-    engine = new RegEngine();
+   
+    GRLog.Log("Demo Start");
+
 }
 
 Demo::~Demo()
 {
-    if (engine!=nullptr) {
-         delete engine;
-    }    
+  
+    GRLog.Log("Demo Finish");
 }
 
-void Demo::Run()
-{
-    RObject r1("1");
-    RObject r2("2");
-    RObject r3("3");
-    RObject r4("4");
-    engine->Run();
+void Demo::Begin(){
+    GRLog.Log("Demo Begin");
+
+}
+void Demo::Tick(){
+    GRLog.Log("Demo Tick");
+
+}
+void Demo::Destory(){
+     GRLog.Log("Demo Destory");
+
 }
 
 } // namespace Reg

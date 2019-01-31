@@ -11,7 +11,8 @@ namespace Reg
 {
     bool bRun = false;
     int FPS = 60;
-    RegEngine* REngine = nullptr;
+    RegEngine* GREngine = nullptr;
     float tickRate = 1;
+    RLog& GRLog = RLog::getInstance();
     
 }

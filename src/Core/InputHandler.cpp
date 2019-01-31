@@ -11,14 +11,20 @@ namespace Reg
 {
 InputHandler::InputHandler()
 {
+
+    GRLog.Log("InputHandler Start");
+    
 }
 
 InputHandler::~InputHandler()
-{
+{  
+    GRLog.Log("InputHandler Close");   
+
 }
 
-void InputHandler::Tick()
+void InputHandler::ReadInput()
 {
     bRun = false;
+    
 }
 } // namespace Reg

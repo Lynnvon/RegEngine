@@ -7,15 +7,12 @@
 
 #pragma once
 #include <RegEngine.hpp>
+#include <RLog.hpp>
 namespace Reg
 {
-
-class RegCoreGlobal
-{
-
-};
     extern bool bRun;
     extern int FPS;
-    extern RegEngine* REngine;
+    extern RegEngine* GREngine;
     extern float tickRate;
+    extern RLog& GRLog;
 } // namespace Reg

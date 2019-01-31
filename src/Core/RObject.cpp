@@ -11,7 +11,7 @@
 namespace Reg
 {
     RObject::RObject(char* name):RObjectBase(name){
-        REngine->Register(this);
+        GREngine->Register(this);
         std::cout<<Name<<"---Register"<<std::endl;
 
     }

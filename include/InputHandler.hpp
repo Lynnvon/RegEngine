@@ -14,6 +14,6 @@ class InputHandler
   public:
     InputHandler();
     ~InputHandler();
-    void Tick();
+    void ReadInput();
 };
 } // namespace Reg

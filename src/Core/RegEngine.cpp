@@ -18,7 +18,8 @@ namespace Reg
 RegEngine::RegEngine()
 {
     bRun = true;
-    REngine = this;
+    GREngine = this;
+
 }
 
 RegEngine::~RegEngine()
@@ -64,12 +65,16 @@ void RegEngine::Tick(float time)
     InputHandler* input=new InputHandler();
     while (bRun)
     {
-        input->Tick();
+        input->ReadInput();
         for (auto item : Objs)
         {
             item->Tick();
         }
     }
+    if (input != nullptr) {
+       delete input;
+    }
+    
     Destory();
 }
 void RegEngine::Destory()

@@ -1,16 +1,20 @@
 #pragma once
+#include "RObject.hpp"
 #include "RegEngine.hpp"
 namespace Reg
 {
     
-    class Demo {
+    class Demo:public RObject {
 
     public:
         Demo();
         ~Demo();
-        void Run();
-
-    private:
-        RegEngine *engine;
+        
+        void Begin() override;
+        void Tick() override;
+        void Destory() override;
+    
+   
+   
     };
 } // Reg
