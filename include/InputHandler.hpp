@@ -8,6 +8,7 @@
 #pragma once
 #include <map>
 #include <string>
+#include <functional>
 #include<RegCoreGlobal.hpp>
 using namespace std;
 
@@ -26,12 +27,12 @@ public:
   InputHandler();
   ~InputHandler();
   void ReadInput();
-  void BindAction(EventType type, KeyCode keycode,string function);
+  void BindAction(EventType, KeyCode,std::function<void()>);
 
 private:
   int index;
-  multimap<KeyCode, string> ButtonEventData;
-  multimap<KeyCode, string> MouseEventData;
-  multimap<KeyCode, string> GamePadEventData;
+  multimap<KeyCode, std::function<void()>> ButtonEventData;
+  multimap<KeyCode, std::function<void()>> MouseEventData;
+  multimap<KeyCode, std::function<void()>> GamePadEventData;
 };
 } // namespace Reg

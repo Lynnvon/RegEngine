@@ -33,41 +33,38 @@ void InputHandler::ReadInput()
         {
             if (item.first == (KeyCode)index)
             {
-                GRLog.Log(item.second);
-                bRun = false;
+                item.second();
             }
         }
         for (auto item : MouseEventData)
         {
             if (item.first == (KeyCode)index)
             {
-                GRLog.Log(item.second);
-                bRun = false;
+                item.second();
             }
         }
         for (auto item : GamePadEventData)
         {
             if (item.first == (KeyCode)index)
             {
-                GRLog.Log(item.second);
-                bRun = false;
+                item.second();
             }
         }
     }
 }
 //绑定输入
-void InputHandler::BindAction(EventType type, KeyCode keycode, string function)
+void InputHandler::BindAction(EventType type, KeyCode keycode, std::function<void()> function)
 {
     switch (type)
     {
     case EventType::KeyBoard:
-        ButtonEventData.insert(pair<KeyCode, string>(keycode, function));
+        ButtonEventData.insert(pair<KeyCode, std::function<void()>>(keycode, function));
         break;
     case EventType::Mouse:
-        MouseEventData.insert(pair<KeyCode, string>(keycode, function));
+        MouseEventData.insert(pair<KeyCode, std::function<void()>>(keycode, function));
         break;
     case EventType::GamePad:
-        GamePadEventData.insert(pair<KeyCode, string>(keycode, function));
+        GamePadEventData.insert(pair<KeyCode, std::function<void()>>(keycode, function));
         break;
     default:
         break;

@@ -53,30 +53,28 @@ void RegEngine::Run()
 
 void RegEngine::Begin()
 {
+    
     for (auto item : Objs)
     {
         item->Begin();
     }
     Tick(1.0f);
 }
+void TestInputAction(){
+    GRLog.Log("TestAction");
+}
 //update
 void RegEngine::Tick(float time)
 {
-    InputHandler* input=new InputHandler();
-    input->BindAction(EventType::KeyBoard, KeyCode::ESC,"ESC press");
-    input->BindAction(EventType::KeyBoard, KeyCode::ESC,"ESC press");
+  
     while (bRun)
     {
-        input->ReadInput();
         for (auto item : Objs)
         {
             item->Tick();
         }
     }
-    if (input != nullptr) {
-       delete input;
-    }
-    
+ 
     Destory();
 }
 void RegEngine::Destory()

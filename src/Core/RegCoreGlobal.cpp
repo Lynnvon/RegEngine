@@ -7,11 +7,13 @@
 
 #include "RegCoreGlobal.hpp"
 #include "RegEngine.hpp"
+#include "InputHandler.hpp"
 namespace Reg
 {
     bool bRun = false;
     int FPS = 60;
     RegEngine* GREngine = nullptr;
+    InputHandler* RInput = nullptr;
     float tickRate = 1;
     RLog& GRLog = RLog::getInstance();
     

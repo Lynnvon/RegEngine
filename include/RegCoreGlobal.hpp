@@ -10,12 +10,16 @@
 #include <RLog.hpp>
 namespace Reg
 {
+    //是否运行中
     extern bool bRun;
+    //Fps
     extern int FPS;
+    //REgine的全局变量
     extern RegEngine* GREngine;
     extern float tickRate;
+    //日志的全局变量
     extern RLog& GRLog;
-
+    //输入事件类型
     enum EventType{
         KeyBoard=0,
         Mouse=1,
